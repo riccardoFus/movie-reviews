@@ -16,7 +16,14 @@ export default class ReviewsController {
         review,
         date
       );
-      res.json({ status: "success" });
+      res.json({
+        status: {
+          movieid: movieId,
+          userInfo: userInfo,
+          review: review,
+          date: date,
+        },
+      });
     } catch (e) {
       res.status(500).json({ error: e.message });
     }
@@ -37,7 +44,7 @@ export default class ReviewsController {
 
       var { error } = reviewResponse;
       if (error) {
-        res.status(500).json({ error : error });
+        res.status(500).json({ error: error });
       }
       if (reviewResponse.modifiedCount == 0) {
         throw new Error(

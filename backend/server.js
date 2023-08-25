@@ -8,6 +8,7 @@ const app = express();
 // enable the server to read and accept JSON in a request's body
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded());
 
 // initial routes
 app.use("/api/v1/movies", movies);
