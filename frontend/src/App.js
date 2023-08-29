@@ -3,7 +3,6 @@ import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
 import AddReview from "./components/add-review";
 import MoviesList from "./components/movies-list";
 import Movie from "./components/movie";
