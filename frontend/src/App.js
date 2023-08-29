@@ -1,8 +1,9 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+
 import AddReview from "./components/add-review";
 import MoviesList from "./components/movies-list";
 import Movie from "./components/movie";
@@ -40,9 +41,9 @@ function App() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Routes>
-        <Route exact path="/" element={<MoviesList />}></Route>
-        <Route exact path="/movies" element={<MoviesList></MoviesList>}></Route>
+      <Switch>
+        <Route exact path="/" component={MoviesList}></Route>
+        <Route exact path="/movies" component={MoviesList}></Route>
         <Route
           path="/movies/:id/review"
           render={(props) => {
@@ -61,7 +62,7 @@ function App() {
             <Login {...props} login={login}></Login>;
           }}
         ></Route>
-      </Routes>
+      </Switch>
     </div>
   );
 }
