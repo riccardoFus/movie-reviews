@@ -33,7 +33,7 @@ function App() {
             </Nav.Link>
             <Nav.Link>
               {user ? (
-                <a onClick={logout}> Logout User </a>
+                <Link onClick={logout}> Logout User </Link>
               ) : (
                 <Link to={"/login"}>Login</Link>
               )}
@@ -46,21 +46,30 @@ function App() {
         <Route exact path="/movies" component={MoviesList}></Route>
         <Route
           path="/movies/:id/review"
+          component={AddReview}
+          /*
           render={(props) => {
             <AddReview {...props} user={user}></AddReview>;
           }}
+          */
         ></Route>
         <Route
-          path="/movies/:id"
+          exact path="/movies/:id"
+          component={Movie}
+          /*
           render={(props) => {
             <Movie {...props} user={user}></Movie>;
           }}
+          */
         ></Route>
         <Route
           path="/login"
+          component={Login}
+          /*
           render={(props) => {
             <Login {...props} login={login}></Login>;
           }}
+          */
         ></Route>
       </Switch>
     </div>
